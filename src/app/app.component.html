@@ -1,26 +1,13 @@
-<div>
-  <div>
-    <nav class="navbar-brand effect box-slide-right">
-      <a
-          routerLink="/home"
-          routerLinkActive="active"
-          >HOME
-        </a>
-      <span class="flex-spacer"></span>
-      <a
-          routerLink="/admin"
-          routerLinkActive="active"
-          >ADMIN PAGE
-        </a>
-    </nav>
-  </div>
 
-  <div class="container">
+<app-header></app-header>
+    
+<main role="main">]
+  <div class="container marketing">
     <router-outlet></router-outlet>
   </div>
-
-  <div>
-    FOOTER
+  <div class="container">
+    <app-footer></app-footer>
   </div>
+  
 
-</div>
+</main>

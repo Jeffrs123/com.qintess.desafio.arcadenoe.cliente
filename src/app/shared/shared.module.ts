@@ -6,21 +6,31 @@ import { ConfirmModalComponent } from './modals/confirm-modal/confirm-modal.comp
 import { AlertModalComponent } from './modals/alert-modal/alert-modal.component';
 
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HeaderComponent } from './utils/header/header.component';
+import { FooterComponent } from './utils/footer/footer.component';
 
 @NgModule({
   declarations: [
     ConfirmModalComponent, 
-    AlertModalComponent
+    AlertModalComponent,
+    HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     CommonModule,
     SharedRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
   ],
   entryComponents: [
     AlertModalComponent,
     ConfirmModalComponent,
+    HeaderComponent,
+    FooterComponent,
+  ],
+  exports: [
+    HeaderComponent,
+    FooterComponent,
   ]
 })
 export class SharedModule { }
