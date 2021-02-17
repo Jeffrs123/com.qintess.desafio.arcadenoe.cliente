@@ -1,0 +1,34 @@
+
+
+<div>
+    <p>dashboard works!</p>
+    <div>
+      <nav class="navbar-brand effect box-slide-right">
+        <a
+        [routerLink]="['atendimento']"
+            routerLinkActive="active"
+            >ATENDIMENTO
+          </a>
+        <span class="flex-spacer"></span>
+        <a
+        
+        [routerLink]="['pet']"
+            >PET
+          </a>
+
+          <!-- 
+              <a
+            routerLink="/pet"
+            routerLinkActive="active"
+            >PET
+          </a>
+          -->
+      </nav>
+    </div>
+  
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
+
+  
+  </div>
