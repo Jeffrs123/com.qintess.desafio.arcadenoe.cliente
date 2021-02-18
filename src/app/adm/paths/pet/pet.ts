@@ -1,9 +1,11 @@
+import { Atendimento } from "../atendimento/atendimento";
+
 export interface Pet {
     id: number;
     nome: string;
     responsavel: string;
     idade: number;  
-    // atendimentos: string; // number
+    atendimentos: Atendimento[]; // number
     especie: string;
     raca: string;
 }
