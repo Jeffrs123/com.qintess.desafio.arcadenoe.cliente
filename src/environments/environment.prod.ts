@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  arcadenoecliente: "arcadenoecliente"
+  API: 'http://localhost:8080/api/v1/'
 };

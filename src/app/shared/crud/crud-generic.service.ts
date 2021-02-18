@@ -10,7 +10,11 @@ export class CrudGenericService<T> {
   ) { }
 
   getAll(): Observable<any> {
+    console.log("Entramos no méttodo para listar todos")
     return this.http.get<T[]>(`${this.API_URL}`)
+    //.pipe(
+      //tap(v =>v)
+    //)
     //return this.http.get(`${this.fullBaseUrl}`);
   }
 }
