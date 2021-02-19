@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { AdmRoutingModule } from './adm-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
-
 @NgModule({
   declarations: [DashboardComponent],
   imports: [

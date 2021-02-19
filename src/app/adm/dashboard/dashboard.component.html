@@ -1,29 +1,59 @@
-<div>
-    <div class="admin-dashboard">
-        <nav class="nav">
-        <ul class="nav nav-tabs">
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="atendimento" [routerLink]="['atendimento']">Atendimento</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="pet" [routerLink]="['pet']">Pet</a>
-            </li>    
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="pet" [routerLink]="['veterinario']">Veterinario</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="pet" [routerLink]="['raca']">Raça</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="pet" [routerLink]="['especialidade']">Especialidade</a>
-            </li>
-        </ul>
-    </nav>
+<div class="adm-space">
+    <div class="row align-items-center adm-area">
+      <div class="col text-center">
+        <h4>
+          Área do ADM
+        </h4>
+      </div>
     </div>
   
-    <div class="container">
-      <router-outlet></router-outlet>
-    </div>
+    <!-- <ul class="nav nav-tabs justify-content-center"> -->
+  
+    <div *ngIf="user; then admLoggedIn; else notAdmLoggedin"></div>
+</div>
 
-  
-  </div>
+
+<ng-template #admLoggedIn>
+    <div>
+        <div class="admin-dashboard">
+            <nav class="nav">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" routerLinkActive="active" aria-current="atendimento" [routerLink]="['atendimento']">Atendimento</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" routerLinkActive="active" aria-current="pet" [routerLink]="['cliente']">Cliente</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" routerLinkActive="active" aria-current="pet" [routerLink]="['especialidade']">Especialidade</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" routerLinkActive="active" aria-current="atendimento" [routerLink]="['exame']">Exame</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" routerLinkActive="active" aria-current="pet" [routerLink]="['medicamento']">Medicamento</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" routerLinkActive="active" aria-current="pet" [routerLink]="['pet']">Pet</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" routerLinkActive="active" aria-current="pet" [routerLink]="['veterinario']">Veterinario</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+      
+        <div class="container">
+          <router-outlet></router-outlet>
+        </div>
+    </div>
+</ng-template>
+
+
+<ng-template #notAdmLoggedin>
+    <div class="row align-items-center adm-area">
+      <div class="col text-center">
+        <h4>Adm precisa estar <strong>LOGADO</strong>.</h4>
+      </div>
+    </div>
+</ng-template>
