@@ -15,58 +15,8 @@ style="color: black;">
           </button>
         </div>
       </div>
-        <!--div class="float-left">
-            <!-- routerLink="/admin" [routerLink]="['']"" -- >
-        <h4 routerLink="/admin/pet">
-            PETS
-        </h4>
-        </div>
-        <div class="float-right">
-        <button
-            type="button"
-            class="btn btn-primary"
-            [routerLink]="['novo']"
-        >
-            Novo Item para Página: <strong> PET </strong>
-        </button>
-        </div-->
   </div>
   <div class="card-body">
     <router-outlet></router-outlet>
-    <!--table
-      class="table table-hover"
-      *ngIf="items$ | async as items; else loadingError"
-    >
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>PET</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let it of items">
-        <div [routerLink]="['detalhe', it.id]">
-            <td>{{ it.id }}</td>
-            <td>{{ it.nome }}</td>
-        </div>
-          
-          <td>
-            <span class="float-right">
-              <button
-                class="btn btn-outline-warning mb-1 btn-sm"
-                [routerLink]="['editar', it.id]"
-              >
-                Atualizar
-              </button>
-
-              <button class="btn btn-outline-danger mb-1 btn-sm">
-                Remover
-              </button>
-            </span>
-          </td>
-        </tr>
-      </tbody>
-    </table-->
   </div>
 </div>

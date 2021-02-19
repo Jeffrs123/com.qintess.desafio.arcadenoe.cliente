@@ -19,21 +19,19 @@ const routes: Routes = [
         component: PetFormComponent
       },
       {
-        path: 'editar/:itemId',
+        path: ':id',
+        component: PetDetailComponent
+      },
+      {
+        path: ':id/editar',
         component: PetFormComponent
       },
       {
-        path: 'detalhe/:itemId',
-        component: PetDetailComponent
+        path: '**',
+        redirectTo: ''
       }
     ]
   },
- 
-  /*,
-  {
-    path: '**',
-    redirectTo: 'admin'
-  }*/
 ];
 
 @NgModule({

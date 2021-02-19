@@ -28,8 +28,7 @@ export class PetListComponent implements OnInit {
     this.items$ = this.service
     .getAll()
     .pipe(
-      tap(v => {
-        console.log("Pages: ", v);
+      tap(v => { //  console.log("Pages: ", v);
         if(v.length <= 0) {
           return null;
         }
@@ -37,40 +36,13 @@ export class PetListComponent implements OnInit {
         
       ),
       // map(dm => this.matters = dm, console.log('mat: ', this.matters)),
-      catchError(error => {
-        console.error(error);
-        console.log('HttpHeaderResponse: ', HttpHeaderResponse.toString())
+      catchError(error => { // console.error(error); console.log('HttpHeaderResponse: ', HttpHeaderResponse.toString())
         this.error$.next(true);
         this.handleError(); //show the alert modal 
         return EMPTY;
       })
     )
   ;
-  }
-  getPetsOLD() {
-    this.items$ = this.service
-      .getAll();
-    /*this.items$ = this.service
-      .getAll()
-      .pipe(
-        tap(v => {
-           console.log('PETS: ', v)
-          if (v.length > 0) {
-             console.log('Temos PETS de usuários.')
-          } else 
-          if (v.length <= 0) {
-            this.error$.next(true);
-            return EMPTY
-          }
-        }),
-        catchError(error => {
-           console.log('Erro pra carregar PETS: ', error)
-          this.error$.next(true);
-          this.handleError();
-          return EMPTY
-        })
-      )
-    ;*/
   }
 
   handleError() {

@@ -4,26 +4,39 @@
       *ngIf="items$ | async as items; else loadingError"
     >
       <thead>
-        <tr>
-          <th>#</th>
-          <th>PET</th>
-          <th></th>
+        <tr  class="text-center">
+          <th>#ID</th>
+          <th>NOME</th>
+          <th>RESPONSÁVEL</th>
+          <th>IDADE</th>
+          <th>ESPECIE</th>
+          <th>RAÇA</th>
+          <th>AÇÕES</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let it of items">
-        <div [routerLink]="['detalhe', it.id]">
             <td>{{ it.id }}</td>
             <td>{{ it.nome }}</td>
-        </div>
+            <td>{{ it.responsavel }}</td>
+            <td>{{ it.idade }}</td>
+            <td>{{ it.especie }}</td>
+            <td>{{ it.raca }}</td>
           
-          <td>
+          <td  class="text-center">
             <span class="float-right">
+                
               <button
-                class="btn btn-outline-warning mb-1 btn-sm"
-                [routerLink]="['editar', it.id]"
+                class="btn btn-outline-success mb-1 btn-sm"
+                [routerLink]="[it.id]"
+                >
+                Detalhes
+                </button>
+              <button
+                class="btn btn-outline-primary mb-1 btn-sm"
+                [routerLink]="[it.id, 'editar']"
               >
-                Atualizar
+                Editar
               </button>
 
               <button class="btn btn-outline-danger mb-1 btn-sm">

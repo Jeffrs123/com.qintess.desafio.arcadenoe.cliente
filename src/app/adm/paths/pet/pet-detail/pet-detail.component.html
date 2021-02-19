@@ -1,1 +1,17 @@
-<p>pet-detail works!</p>
+<h5>
+    Detalhes do Pet
+</h5>
+
+<p>{{ pet.id }}</p>
+<p>{{ pet.nome }}</p>
+<p>{{ pet.responsavel }}</p>
+<p>{{ pet.idade }}</p>
+<p>{{ pet.especie }}</p>
+<p>{{ pet.raca }}</p>
+
+<button
+class="btn btn-outline-primary mb-1 btn-sm"
+[routerLink]="['editar']"
+>
+Editar
+</button>
