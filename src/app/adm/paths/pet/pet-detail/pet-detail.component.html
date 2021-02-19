@@ -1,4 +1,43 @@
-<h5>
+<div class="card">
+    <div class="card-header">
+        Detalhes do Pet
+    </div>
+    <div class="card-body">
+        <p>{{ pet.id }}</p>
+        <p>{{ pet.nome }}</p>
+        <p>{{ pet.responsavel }}</p>
+        <p>{{ pet.idade }}</p>
+        <p>{{ pet.especie }}</p>
+        <p>{{ pet.raca }}</p>
+    </div>
+    <div class="card-footer">
+        <button
+        class="btn btn-outline-primary mb-1 btn-sm"
+        [routerLink]="['editar']"
+        >
+        Editar
+        </button>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        Atendimentos do Pet
+    </div>
+    <div class="card-body">
+        tabela de atendimentos
+    </div>
+    <div class="card-footer">
+        <button
+        class="btn btn-outline-primary mb-1 btn-sm"
+        [routerLink]="['editar']"
+        >
+        Novo Atendimento
+        </button>
+    </div>
+</div>
+
+<!--h5>
     Detalhes do Pet
 </h5>
 
@@ -27,3 +66,17 @@ class="btn btn-outline-primary mb-1 btn-sm"
 >
 Editar
 </button>
+
+<div class="card">
+    <div class="card-header">
+
+    </div>
+    <div class="card-body">
+
+    </div>
+    <div class="card-footer">
+        
+    </div>
+</div>
+
+-->

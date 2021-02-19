@@ -16,9 +16,11 @@ export class PetFormComponent implements OnInit {
   pet!: Pet;
   inscricao: Subscription;
   param: any;
+  submitted = false;
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private petService: PetService,
     private alertService: ModalService
   ) { }
@@ -36,6 +38,8 @@ export class PetFormComponent implements OnInit {
     }
   }
 
+  
+
   get() {
     this.pet = new Pet();
     this.inscricao = this.route.params.subscribe(
@@ -52,12 +56,45 @@ export class PetFormComponent implements OnInit {
     this.inscricao = this.petService
           .get(id)
           .subscribe(
-            (data: Pet) => this.pet = data,
+            (data: Pet) => {
+              this.pet = data;// this.handleSuccess("salvo com sucesso. data => " + data);
+            },
             (e: any) =>  this.handleError(e.error.message)
           )
         ;
   }
-  
+
+  onSubmit() {
+    this.submitted = true;
+    this.save();
+  }
+
+  save() {
+    this.petService
+      .create(this.pet)
+      .subscribe(
+        (data: any) => {
+          this.handleSuccess(data.message),
+          console.log(data)
+        },
+        (e: any) =>  this.handleError(e.error.message)
+      );
+    this.pet = new Pet();
+    this.goToList();
+  }
+
+  goToList() {
+    this.router.navigate(['admin/pet'])
+  }
+
+  handleSuccess(message: string) {
+    this.alertService.showAlertSuccess(
+      `${message}`,
+      "alert",
+      5000
+    );
+  }
+
   handleError(message: string) {
     this.alertService.showAlertDanger(
       `${message}`,
@@ -65,6 +102,7 @@ export class PetFormComponent implements OnInit {
       5000
     );
   }
+
 
   ngOnDestroy(){
     this.inscricao.unsubscribe();

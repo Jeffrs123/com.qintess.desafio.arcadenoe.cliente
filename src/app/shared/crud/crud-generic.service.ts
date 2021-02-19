@@ -23,4 +23,8 @@ export class CrudGenericService<T> {
   get(id: number) {
     return this.http.get<T>(`${this.API_URL}/${id}`);
   }
+
+  create(item: T) {
+    return this.http.post(`${this.API_URL}`, item);
+  }
 }

@@ -1,4 +1,26 @@
-<div class="card" 
+
+<div class="titulo-dashboard">
+    <div class="row">
+        <div class="col" routerLink="/admin/pet">
+            <h1 >PETS</h1>
+        </div>
+        <div class="col float-right">
+            <button
+            type="button"
+            class="btn btn-primary"
+            [routerLink]="['novo']"
+          >
+            Cadastrar Novo: <strong> PET </strong>
+          </button>
+        </div>
+    </div>
+</div>
+
+<div class="conteudo-dashboard">
+    <router-outlet></router-outlet>
+</div>
+
+<!--div class="card" 
 style="color: black;">
   <div class="card-header">
       <div class="row">
@@ -19,4 +41,5 @@ style="color: black;">
   <div class="card-body">
     <router-outlet></router-outlet>
   </div>
-</div>
+</div-->
+
