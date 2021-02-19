@@ -18,7 +18,8 @@ export class PetListComponent implements OnInit {
   
   constructor(
     private service: PetService,
-    private alertService: ModalService
+    private alertService: ModalService,
+    private petService: PetService
   ) { }
 
   ngOnInit(): void {
@@ -43,6 +44,24 @@ export class PetListComponent implements OnInit {
       })
     )
   ;
+  }
+
+  delete(id: number) {
+    this.petService
+    .deleta(id)
+    .subscribe(
+      (data: any) => {
+        this.handleSuccess("deletado com sucesso"); 
+        this.onRefresh();
+      },
+      (error: any) => console.log(error)
+    );
+  }
+  handleSuccess(text: string) {
+    this.alertService.showAlertSuccess(
+      text,
+      "alert", 2000
+    );
   }
 
   handleError() {

@@ -27,4 +27,14 @@ export class CrudGenericService<T> {
   create(item: T) {
     return this.http.post(`${this.API_URL}`, item);
   }
+
+  update(id: number, value: any) {
+    return this.http.put(`${this.API_URL}/${id}`, value);
+  }
+
+  deleta(id: number) {
+    return this.http.delete(`${this.API_URL}/${id}`);
+    //return this.http.delete(`${this.API_URL}/${id}`, { responseType: 'text'});
+  }
+
 }

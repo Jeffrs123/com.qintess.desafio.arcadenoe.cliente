@@ -68,10 +68,30 @@ export class PetFormComponent implements OnInit {
     this.submitted = true;
     this.save();
   }
+  
 
   save() {
     this.petService
       .create(this.pet)
+      .subscribe(
+        (data: any) => {
+          this.handleSuccess(data.message),
+          console.log(data)
+        },
+        (e: any) =>  this.handleError(e.error.message)
+      );
+    this.pet = new Pet();
+    this.goToList();
+  }
+
+  onUpdate() {
+    this.submitted = true;
+    this.update();
+  }
+
+  update() {
+    this.petService
+      .update(this.pet.id, this.pet)
       .subscribe(
         (data: any) => {
           this.handleSuccess(data.message),

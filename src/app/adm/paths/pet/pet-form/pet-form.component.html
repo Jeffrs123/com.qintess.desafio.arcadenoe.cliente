@@ -5,7 +5,8 @@
      <span>PET</span>
 </div>
 <div class="largura" [hidden]="submitted">
-    <form (ngSubmit)="onSubmit()">
+    <!-- <form (ngSubmit)="onSubmit()"> -->
+    <form>
         <div class="form-group">
             <label for="nome">nome</label>
             <input type="text" class="form-control" id="name" required [(ngModel)]="pet.nome" name="nome">
@@ -27,7 +28,9 @@
             <label for="raca">raça</label>
             <input type="text" class="form-control" id="raca" required [(ngModel)]="pet.raca" name="raca">
         </div>
-        <button type="submit" class="btn btn-success">Submit</button>
+        <button *ngIf="!pet.id" type="submit"  (click)="onSubmit()" class="btn btn-success">Adicionar</button>
+        <button *ngIf="pet.id" type="submit" (click)="onUpdate()" class="btn btn-success">Salvar</button>
+        <!-- <button *ngIf="pet.id" type="submit" class="btn btn-success">Salvar</button> -->
     </form>
 </div>
 
