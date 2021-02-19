@@ -4,8 +4,10 @@
 
 export const environment = {
   production: false,
+  
+  API: 'https://cvarcadenoe.herokuapp.com/api/v1/pet',
   //API: 'https://clinicaveterinariaarcadenoe.herokuapp.com/api/v1/',
-  API: 'http://localhost:8080/api/v1/'
+  //API: 'http://localhost:8080/api/v1/'
 };
 
 /*
